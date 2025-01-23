@@ -37,7 +37,7 @@ const SubscriberDetails = () => {
       setIsLoading(true); // Set loading state to true
       setError(null); // Clear any previous errors
   
-      fetch(`/api/post/subscriber/${id}`)
+      fetch(`/post/subscriber/${id}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to fetch subscriber details");
@@ -71,7 +71,7 @@ const SubscriberDetails = () => {
   // Handle subscription renewal
  const handleRenew = async (newStartDate, newEndDate) => {
     try {
-      const response = await fetch(`/api/subscriber/${id}/renew`, {
+      const response = await fetch(`/subscriber/${id}/renew`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -92,7 +92,7 @@ const SubscriberDetails = () => {
   // Handle delete
   const handleDelete = async () => {
     try {
-      const response = await fetch(`/api/post/deleteSubscriper/${id}`, {
+      const response = await fetch(`/post/deleteSubscriper/${id}`, {
         method: "DELETE",
         credentials: "include",
       });

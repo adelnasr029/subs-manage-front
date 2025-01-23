@@ -42,7 +42,7 @@ const Login = () => {
 
     try {
       // Send login request to the server
-      const response = await fetch("/api/login", {
+      const response = await fetch("/login", {
         method: "POST",
         credentials: "include",
         headers: {
