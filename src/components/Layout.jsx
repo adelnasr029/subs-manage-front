@@ -3,7 +3,7 @@ import Header from './partials/Header';
 const Layout = ({ children }) => {
     const navLinks = [
       // { path: '/subscripers-list', name: 'Subscripers-List' },
-      { path: 'https://ucl-winner.onrender.com/logout', name: 'Logout' },
+      { path: 'logout', name: 'Logout' },
     ];
   
     return (

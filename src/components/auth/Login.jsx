@@ -71,7 +71,7 @@ console.log('testing: navigate to ok')
       login();
       alert("Login successful!");
       console.log('testing: navigate to 2')
-      navigate("https://subs-manage-system.netlify.app/home"); // Redirect to home/dashboard
+      navigate("/home"); // Redirect to home/dashboard
       console.log('testing: navigate to home')
     } catch (err) {
       // Handle different types of errors

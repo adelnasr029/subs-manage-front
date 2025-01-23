@@ -2,7 +2,7 @@ const Header = ({ links }) => {
     return (
       <header className="main-header">
         <div className="logo">
-          <a href="https://ucl-winner.onrender.com/home">Home</a>
+          <a href="/home">Home</a>
         </div>
         <nav className="main-nav">
           <ul>
