@@ -51,48 +51,48 @@ const Dashboard = () => {
         }
       };
 
-  useEffect(() => {
-    const fetchSubscribers = () => {
-      fetch("https://ucl-winner.onrender.com/home", {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }) 
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          // Add daysRemaining to each subscriber
-          const subscribersWithDetails = data.map((subscriber) => {
-            const remainingDays = calculateRemainingDays(subscriber.endDate);
-            const status = getSubscriptionStatus(
-              subscriber.startDate,
-              remainingDays
-            );
-            return {
-              ...subscriber,
-              daysRemaining: remainingDays,
-              status,
-            };
-          });
-          setSubscribers(subscribersWithDetails);
-        })
-        .catch((error) => {
-          console.error("Error fetching subscribers:", error);
-        });
-    };
-    fetchSubscribers();
-  }, [refreshData]);
+  // useEffect(() => {
+  //   const fetchSubscribers = () => {
+  //     fetch("https://ucl-winner.onrender.com/home", {
+  //       method: "GET",
+  //       credentials: "include",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     }) 
+  //       .then((response) => {
+  //         if (!response.ok) {
+  //           throw new Error("Network response was not ok");
+  //         }
+  //         return response.json();
+  //       })
+  //       .then((data) => {
+  //         // Add daysRemaining to each subscriber
+  //         const subscribersWithDetails = data.map((subscriber) => {
+  //           const remainingDays = calculateRemainingDays(subscriber.endDate);
+  //           const status = getSubscriptionStatus(
+  //             subscriber.startDate,
+  //             remainingDays
+  //           );
+  //           return {
+  //             ...subscriber,
+  //             daysRemaining: remainingDays,
+  //             status,
+  //           };
+  //         });
+  //         setSubscribers(subscribersWithDetails);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching subscribers:", error);
+  //       });
+  //   };
+  //   fetchSubscribers();
+  // }, [refreshData]);
 
-  // Handle search input change
-  const handleSearch = (e) => {
-    setQuery(e.target.value);
-  };
+  // // Handle search input change
+  // const handleSearch = (e) => {
+  //   setQuery(e.target.value);
+  // };
     // Filter subscribers based on the search query (ID or name)
     const handleEdit = (id) => {
       const subscriberToEdit = subscribers.find((subscriber) => subscriber._id === id);
