@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
 import ImageTooltip from "./ImageTooltip";
 
 const Dashboard = () => {
-  const navigate = useNavigate();
   const [subscribers, setSubscribers] = useState([]);
   const [query, setQuery] = useState(""); // State for search query
 
