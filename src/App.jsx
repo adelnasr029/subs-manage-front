@@ -16,9 +16,9 @@ export default function App() {
       <AuthProvider>
         <Router>
           <Routes>
-            <Route path="/login" element={<Login />} />
+            <Route path="https://subs-manage-system.netlify.app/login" element={<Login />} />
               <Route
-                path="/home"
+                path="https://subs-manage-system.netlify.app/home"
                 element={
                   <ProtectedRoute>
                     <Layout>
@@ -37,14 +37,14 @@ export default function App() {
                 }
               />
               <Route
-                path="/signup"
+                path="https://subs-manage-system.netlify.app/signup"
                 element={
                   <ProtectedRoute>
                     <Signup />
                   </ProtectedRoute>
                 }/>
               <Route
-                path="/logout"
+                path="https://subs-manage-system.netlify.app/logout"
                 element={
                 <ProtectedRoute>
                   <Layout>

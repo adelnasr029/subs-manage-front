@@ -25,7 +25,7 @@ const Logout = () => {
     }
     localStorage.removeItem("isAuthenticated");
     setIsAuthenticated(false);
-    navigate("/login");
+    navigate("https://subs-manage-system.netlify.app/login");
   };
 
   const handleCancel = () => {
