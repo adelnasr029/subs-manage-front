@@ -42,7 +42,7 @@ const Login = () => {
 
     try {
       // Send login request to the server
-      const response = await fetch("/login", {
+      const response = await fetch("https://ucl-winner.onrender.com/login", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -129,7 +129,7 @@ console.log('testing: navigate to ok')
           </button>
           <p className="alert alert-danger">
           Don't have an account?{" "}
-          <a href="/signup" >
+          <a href="https://ucl-winner.onrender.com/signup" >
             Sign up
           </a>
             </p>

@@ -55,7 +55,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchSubscribers = () => {
-      fetch("/home", {
+      fetch("https://ucl-winner.onrender.com/home", {
         method: "GET",
         credentials: "include",
         headers: {
@@ -155,7 +155,7 @@ const Dashboard = () => {
       if (formData.image) {
         formDataToSend.append("image", formData.image);
       }
-      const response = await fetch(`/post/updateSubscriber/${currentSubscriberId}`, {
+      const response = await fetch(`https://ucl-winner.onrender.com/post/updateSubscriber/${currentSubscriberId}`, {
         method: "PUT",
         credentials: "include",
         body: formDataToSend,
@@ -238,7 +238,7 @@ const Dashboard = () => {
         formDataToSend.append("image", formData.image); 
       }
 
-      const response = await fetch("/post/createSub", {
+      const response = await fetch("https://ucl-winner.onrender.com/post/createSub", {
         method: "POST",
         credentials: "include",
         body: formDataToSend,

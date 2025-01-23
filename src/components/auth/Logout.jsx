@@ -10,7 +10,7 @@ const Logout = () => {
   const handleLogout = async () => {
 
     try {
-      const response = await fetch("/api/logout", {
+      const response = await fetch("https://ucl-winner.onrender.com/logout", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
