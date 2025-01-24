@@ -186,9 +186,13 @@ const SubscriberDetails = () => {
                 <label htmlFor="amount">Amount</label>
                 <input type="number" id="amount" name="amount" required />
               </div>
-              <div className="form-btn">
+              { !localStorage.getItem("isAuthenticated")?
+                <div className="form-btn">
+                  <label>Renew subscription</label>
+                </div>
+               : <div className="form-btn">
                 <button type="submit">Renew Subscription</button>
-              </div>
+              </div>}
             </form>
           </div>
             
