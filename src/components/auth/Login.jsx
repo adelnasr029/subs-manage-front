@@ -50,12 +50,7 @@ const Login = () => {
         },
         body: JSON.stringify(formData),
       });
-      console.log('testing: navigate to ok')
-
       const data = await response.json()
-console.log(data)
-console.log('testing: navigate to ok')
-
       if (!response.ok) {
         // Handle validation or authentication errors
         if (data.errors) {
@@ -70,9 +65,7 @@ console.log('testing: navigate to ok')
 
       login();
       alert("Login successful!");
-      console.log('testing: navigate to 2')
-      navigate("/home"); // Redirect to home/dashboard
-      console.log('testing: navigate to home')
+      navigate("/home")
     } catch (err) {
       // Handle different types of errors
       if (err.name === "TypeError" && err.msg === "Failed to fetch") {

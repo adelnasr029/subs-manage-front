@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ImageTooltip from "./ImageTooltip";
+import { Link } from "react-router";
+
 
 const Dashboard = () => {
   const [subscribers, setSubscribers] = useState([]);
