@@ -1,5 +1,5 @@
 import Header from './partials/Header';
-
+import Footer from './partials/Footer'
 const Layout = ({ children }) => {
   const isLogin =  localStorage.getItem("isAuthenticated")
 
@@ -15,6 +15,7 @@ const Layout = ({ children }) => {
       <div className="layout">
         <Header links={navLinks} />
         {children}
+        <Footer />
       </div>
     );
   };

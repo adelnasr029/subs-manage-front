@@ -17,26 +17,25 @@ export default function App() {
       <AuthProvider>
         <Router>
           <Routes>
-          <Route path="/" 
+            <Route path="/" 
             element={
               <Layout>
                 <Home/>
               </Layout>              } 
             />
-            <Route path="/login" element={
+            <Route path="/login" 
+            element={
               <Layout>
-              <Login/>
-            </Layout>
-              }
-              />
-                <Route
+                <Login/>
+              </Layout>
+              } 
+            />
+            <Route
                 path="/signup"
                 element={
-                  <Layout>
                   <ProtectedRoute>
                     <Signup />
                   </ProtectedRoute>
-                  </Layout>
                 }/>
               <Route
                 path="/logout"
@@ -51,20 +50,16 @@ export default function App() {
               <Route
                 path="/dashboard"
                 element={
-                  <ProtectedRoute>
                     <Layout>
-                      <Dashboard/>
+                      <Dashboard />
                     </Layout>
-                  </ProtectedRoute>
                 }/>
               <Route
                 path="/subscriber/:id"
                 element={
-                  <ProtectedRoute>
                     <Layout>
                       <SubscriberDetails />
                     </Layout>
-                  </ProtectedRoute>
                 }
               />
               <Route path="*" element={<Home/>} />
