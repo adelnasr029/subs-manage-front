@@ -1,6 +1,8 @@
 import Header from './partials/Header';
 
 const Layout = ({ children }) => {
+  const isLogin =  localStorage.getItem("isAuthenticated")
+
     const navLinks = [
       // { path: '/subscripers-list', name: 'Subscripers-List' },
       { path: 'logout', name: 'Logout' },
