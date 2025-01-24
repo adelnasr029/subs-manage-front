@@ -4,16 +4,8 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Check localStorage for authentication status on initial load
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setIsAuthenticated(true);
-    }
-  }, []);
 
-  const login = (token) => {
-    localStorage.setItem("token", token); // Store token in localStorage
+  const login = () => {
     localStorage.setItem("isAuthenticated", "true"); // Store authentication status
     setIsAuthenticated(true);
   };

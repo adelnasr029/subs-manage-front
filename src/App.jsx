@@ -5,10 +5,11 @@ import { AuthProvider } from "./components/auth/AuthContext";
 import Signup from "./components/auth/Signup"
 import Login from "./components/auth/Login"
 import Logout from "./components/auth/Logout";
-import Dashboard from "./components/subscriptions/Home"
+import Dashboard from "./components/subscriptions/Dashboard"
 import ProtectedRoute from "./components/auth/ProtectedRoute"
 import SubscriberDetails from "./components/subscriptions/SubscriberDetails";
 import Layout from './components/Layout'
+import Home from "./components/Home";
 
 
 export default function App() {
@@ -16,13 +17,43 @@ export default function App() {
       <AuthProvider>
         <Router>
           <Routes>
-            <Route path="/login" element={<Login />} />
+          <Route path="/" 
+            element={
+              <Layout>
+                <Home/>
+              </Layout>              } 
+            />
+            <Route path="/login" element={
+              <Layout>
+              <Login/>
+            </Layout>
+              }
+              />
+                <Route
+                path="/signup"
+                element={
+                  <Layout>
+                  <ProtectedRoute>
+                    <Signup />
+                  </ProtectedRoute>
+                  </Layout>
+                }/>
               <Route
-                path="/home"
+                path="/logout"
+                element={
+                <ProtectedRoute>
+                  <Layout>
+                    <Logout />
+                  </Layout>
+                </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/dashboard"
                 element={
                   <ProtectedRoute>
                     <Layout>
-                    <Dashboard />
+                      <Dashboard/>
                     </Layout>
                   </ProtectedRoute>
                 }/>
@@ -36,24 +67,7 @@ export default function App() {
                   </ProtectedRoute>
                 }
               />
-              <Route
-                path="/signup"
-                element={
-                  <ProtectedRoute>
-                    <Signup />
-                  </ProtectedRoute>
-                }/>
-              <Route
-                path="/logout"
-                element={
-                <ProtectedRoute>
-                  <Layout>
-                    <Logout />
-                  </Layout>
-                </ProtectedRoute>
-                }
-              />
-              <Route path="*" element={<Login />} />
+              <Route path="*" element={<Home/>} />
           </Routes>
         </Router>
       </AuthProvider>

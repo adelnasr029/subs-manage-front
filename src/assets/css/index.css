@@ -60,25 +60,6 @@ body, ul, li, a {
   padding: 0;
   list-style: none;
 }
-/* Header styling */
-.main-header {
-  display: flex;
-  gap: 100px;
-  justify-content: center;
-  align-items: center;
-  background-color: #333;
-  padding: 10px 100px;
-  position: sticky;
-  top: 0;
-  z-index: 10000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .signup-container{
   max-width: 400px;
   display: flex;
@@ -177,33 +158,6 @@ body, ul, li, a {
 .alert-danger::before {
   content: "⚠️"; /* Unicode warning icon */
   font-size: 16px; /* Icon size */
-}
-/* Logo styling */
-.logo a {
-  color: #fff;
-  font-size: 24px;
-  font-weight: bold;
-}
-.logo a:hover {
-  background-color: #555;
-  color: #ffcc00;
-  border-radius: 4px;
-}
-/* Navigation styling */
-.main-nav ul {
-  display: flex;
-  gap: 20px;
-}
-.main-nav a {
-  color: #fff;
-  font-size: 16px;
-  padding: 5px 10px;
-  transition: background-color 0.3s, color 0.3s;
-}
-.main-nav a:hover {
-  background-color: #555;
-  color: #ffcc00;
-  border-radius: 4px;
 }
 
 /* Container for the buttons */

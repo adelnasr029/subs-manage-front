@@ -60,12 +60,9 @@ const Login = () => {
         }
         return;
       }
-      // Simulate successful login
-      console.log('testing: navigate to 1')
-
       login();
       alert("Login successful!");
-      navigate("/home")
+      navigate("/dashboard")
     } catch (err) {
       // Handle different types of errors
       if (err.name === "TypeError" && err.msg === "Failed to fetch") {
@@ -83,8 +80,11 @@ const Login = () => {
   return (
     <>
       <div className="form-description">
-        <h2 >Login</h2>
         {error && <p className="alert alert-danger">{error}</p>}
+              {/* Add the description here */}
+        <p className="auth-description">
+          Only users authenticated by the admin can log in. If you don't have     credentials, please contact the administrator.
+        </p>
       </div>
       <div className="signup-container">
       <form onSubmit={handleSubmit}>
@@ -121,7 +121,7 @@ const Login = () => {
             {loading ? "Logging in..." : "Login"}
           </button>
           <p className="alert alert-danger">
-          Don't have an account?{" "}
+          Don't have an account? Only an admin can sign up.{" "}
           <a href="https://ucl-winner.onrender.com/signup" >
             Sign up
           </a>

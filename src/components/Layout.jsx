@@ -4,6 +4,9 @@ const Layout = ({ children }) => {
     const navLinks = [
       // { path: '/subscripers-list', name: 'Subscripers-List' },
       { path: 'logout', name: 'Logout' },
+      isLogin? 
+      { path: '/logout', name: 'Logout' } : 
+      { path: '/login', name: 'Login' }
     ];
   
     return (

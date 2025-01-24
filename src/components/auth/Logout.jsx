@@ -39,7 +39,7 @@ const Logout = () => {
 
       {/* Popup */}
       <div className="confirmation-modal">
-        <h2>Are you sure you want to log out?</h2>
+        <p>Are you sure you want to log out?</p>
         <div className="button-container">
           <button className="cancel" onClick={handleCancel}>
             Cancel

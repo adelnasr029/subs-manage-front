@@ -245,6 +245,7 @@ const Dashboard = () => {
       });
       console.log('Add Sub triggered')
       if (!response.ok) {
+        alert("Not Available As a Guest!");
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
     
@@ -395,7 +396,7 @@ const Dashboard = () => {
               <th>Status</th>
               <th>End Date</th>
               <th>Value</th>
-              <th>Actions</th>
+              {localStorage.getItem("isAuthenticated") && <th>Actions</th>}
             </tr>
           </thead>
           <tbody>
@@ -430,12 +431,15 @@ const Dashboard = () => {
                   {subscriber.amount} EGP
                 </td>
                 <td>
-                  <button
-                    onClick={() => handleEdit(subscriber._id)}
-                    className="edit-button"
-                    >
-                    Edit
-                  </button>
+                {localStorage.getItem("isAuthenticated") &&  <td>
+                    <button
+                      onClick={() => handleEdit(subscriber._id)}
+                      className="edit-button"
+                      >
+                      Edit
+                    </button>
+                  </td>
+                }
                 </td>
               </tr>
             ))}
