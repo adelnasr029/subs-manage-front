@@ -4,11 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 const Logout = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-  
-  // const { setIsAuthenticated } = useContext(AuthContext);
-  const navigate = useNavigate();
+    const navigate = useNavigate();
+    
   const handleLogout = async () => {
-
     try {
       const response = await fetch("https://ucl-winner.onrender.com/logout", {
         method: "GET",
@@ -27,7 +25,6 @@ const Logout = () => {
     setIsAuthenticated(false);
     navigate("/login");
   };
-
   const handleCancel = () => {
     navigate(-1);
   };

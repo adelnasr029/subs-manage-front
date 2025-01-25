@@ -4,7 +4,6 @@ const Layout = ({ children }) => {
   const isLogin =  localStorage.getItem("isAuthenticated")
 
     const navLinks = [
-      // { path: '/subscripers-list', name: 'Subscripers-List' },
       { path: 'dashboard', name: 'Dashboard' },
       isLogin? 
       { path: '/logout', name: 'Logout' } : 

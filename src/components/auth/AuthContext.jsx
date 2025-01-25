@@ -1,21 +1,18 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-
   const login = () => {
-    localStorage.setItem("isAuthenticated", "true"); // Store authentication status
+    localStorage.setItem("isAuthenticated", "true"); 
     setIsAuthenticated(true);
   };
 
   const logout = () => {
-    localStorage.removeItem("token"); // Remove token from localStorage
-    localStorage.removeItem("isAuthenticated"); // Remove authentication status
+    localStorage.removeItem("isAuthenticated"); 
     setIsAuthenticated(false);
   };
-
     // Value to be provided to consuming components
     const value = {
       isAuthenticated,

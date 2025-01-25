@@ -233,7 +233,6 @@ const Dashboard = () => {
       formDataToSend.append("startDate", formData.startDate);
       formDataToSend.append("endDate", formData.endDate);
       formDataToSend.append("amount", formData.amount);
-      console.log(formDataToSend)
       if (formData.image) {
         formDataToSend.append("image", formData.image); 
       }
@@ -243,7 +242,6 @@ const Dashboard = () => {
         credentials: "include",
         body: formDataToSend,
       });
-      console.log('Add Sub triggered')
       if (!response.ok) {
         alert("Not Available As a Guest!");
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -261,10 +259,10 @@ const Dashboard = () => {
 
     } catch (error) {
       console.error("Error:", error);
-      setError("Failed to submit the form. Please try again."); // Set error message
+      setError("Failed to submit the form. Please try again.");
     } finally {
       setRefreshData(prev => !prev)
-      setIsLoading(false); // Set loading state to false
+      setIsLoading(false); 
     }
   };
 

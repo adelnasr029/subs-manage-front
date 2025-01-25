@@ -17,7 +17,7 @@ const SubscriberDetails = () => {
       return differenceInDays >= 0 ? differenceInDays : 0;
     };
 
-      // Function to determine subscription status
+  // Function to compute subscription status
   const getSubscriptionStatus = (startDate, remainingDays) => {
     const currentDate = new Date();
     const start = new Date(startDate);
@@ -31,18 +31,17 @@ const SubscriberDetails = () => {
     }
   };
 
-  // Fetch subscriber details
   useEffect(() => {
     const fetchSubscriber = () => {
-      setIsLoading(true); // Set loading state to true
-      setError(null); // Clear any previous errors
+      setIsLoading(true); 
+      setError(null); 
   
       fetch(`https://ucl-winner.onrender.com/post/subscriber/${id}`)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Failed to fetch subscriber details");
           }
-          return response.json(); // Parse the JSON response
+          return response.json(); 
         })
         .then((data) => {
           // Calculate remaining days and subscription status
@@ -68,7 +67,6 @@ const SubscriberDetails = () => {
     fetchSubscriber(); 
   }, [id]); 
 
-  // Handle subscription renewal
  const handleRenew = async (newStartDate, newEndDate) => {
     try {
       const response = await fetch(`https://ucl-winner.onrender.com/subscriber/${id}/renew`, {
@@ -89,7 +87,6 @@ const SubscriberDetails = () => {
     }
   };
 
-  // Handle delete
   const handleDelete = async () => {
     try {
       const response = await fetch(`https://ucl-winner.onrender.com/post/deleteSubscriper/${id}`, {
@@ -99,7 +96,7 @@ const SubscriberDetails = () => {
       if (!response.ok) {
         throw new Error("Failed to delete subscriber");
       }
-      navigate("/home"); // Redirect to dashboard after deletion
+      navigate("/home");
     } catch (error) {
       setError(error.message);
     }
