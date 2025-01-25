@@ -96,7 +96,7 @@ const SubscriberDetails = () => {
       if (!response.ok) {
         throw new Error("Failed to delete subscriber");
       }
-      navigate("/home");
+      navigate("/dashboard");
     } catch (error) {
       setError(error.message);
     }
@@ -108,7 +108,7 @@ const SubscriberDetails = () => {
     <div className="subscriber-details-container">
     <div className="subscriber-details">
           <div className="header">
-              <button onClick={() => navigate("/home")} className="back-button">
+              <button onClick={() => navigate("/dashboard")} className="back-button">
               <i className="fas fa-arrow-left"></i> 
               </button>
               <button onClick={() => setShowConfirmation(true)} className="delete-button">
